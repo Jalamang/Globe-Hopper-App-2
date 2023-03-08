@@ -23,11 +23,11 @@ def createcountry():
 
 # # # Read API
 @app.route('/countries/<int:countryId>', methods=['DELETE'])
-def deletecountry(countryId):
-    return country.deletecountry(countryId)
+def deletecountry(countryid):
+    return country.deletecountry(countryid)
 
 
 
 # Execute on the terminal
 if __name__ =='__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5000)

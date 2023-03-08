@@ -1,7 +1,9 @@
 {
     "cSpell.words": [
+        "cid",
         "countryid",
         "dbconn",
+        "deletecountry",
         "jsonify",
         "myCursor"
     ],

@@ -11,13 +11,13 @@ import dbconn
 def getcountries():
     #Open connection
     dbconn.con._open_connection()
-    myCursor = dbconn.con.cursor()
+    mycursor = dbconn.con.cursor()
     
-    myCursor.execute("SELECT * FROM Country")
+    mycursor.execute("SELECT * FROM Country")
     result = myCursor.fetchall()
     
     #Close connection
-    myCursor.close()
+    mycursor.close()
     dbconn.con.close()
     
     return result
@@ -26,7 +26,7 @@ def getcountries():
 def createcountry(data):
     #Open connection
     dbconn.con._open_connection()
-    myCursor = dbconn.con.cursor()
+    mycursor = dbconn.con.cursor()
     
     countryid = data['CountryId']
     name = data['Name']
@@ -36,7 +36,7 @@ def createcountry(data):
     
     sql = "INSERT INTO Country (CountryId, Name, Population, Continent) VALUES (%s, %s, %s, %s)"
     val = (countryid, name, population, continent)
-    myCursor.execute(sql, val)
+    mycursor.execute(sql, val)
     
     #Close connection
     myCursor.close()
@@ -44,18 +44,18 @@ def createcountry(data):
     
     
 # Add a country 
-def deletecountry(countryId):
+def deletecountry(countryid):
      #Open connection
     dbconn.con._open_connection()
-    myCursor = dbconn.con.cursor()
+    mycursor = dbconn.con.cursor()
     
     sql = "DELETE FROM Country WHERE CountryId = %s"
-    id = countryId
-    myCursor.execute(sql, (id,))
+    cid = countryid
+    mycursor.execute(sql, (id,))
     
     dbconn.con.commit()
 
     #Close connection
-    myCursor.close()
+    mycursor.close()
     dbconn.con.close()
     

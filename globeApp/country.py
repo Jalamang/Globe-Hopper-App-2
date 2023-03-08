@@ -21,6 +21,6 @@ def createcountry(data):
     return jsonify({'Message': "Country created"})
 
 
-def deletecountry(countryId):
-    services.deletecountry(countryId)
+def deletecountry(countryid):
+    services.deletecountry(countryid)
     return jsonify({'Message': "Country deleted"})
