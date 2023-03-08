@@ -3,10 +3,6 @@
 from flask import Flask, request, jsonify
 import dbconn
 
-
-
-
-
 #  Gets all records from the country entity using sequel
 def getcountries():
     #Open connection
@@ -82,4 +78,19 @@ def updatecountry(data):
     mycursor.close()
     dbconn.con.close()
 
+#  City details
+
+#  Gets all records from the country entity using sequel
+def getcities():
+    #Open connection
+    dbconn.con._open_connection()
+    mycursor = dbconn.con.cursor()
     
+    mycursor.execute("SELECT * FROM City")
+    result = mycursor.fetchall()
+    
+    #Close connection
+    mycursor.close()
+    dbconn.con.close()
+    
+    return result   

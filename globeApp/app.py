@@ -2,7 +2,7 @@
 #  pip install Flask
 
 from flask import Flask, request, jsonify 
-import country
+import country, city
 # Using flask frame work
 app = Flask(__name__)
 
@@ -34,6 +34,19 @@ def updatecountry():
     return country.updatecountry(data)
 
 
+
+
+# Cities Details
+
+
+# Read API
+@app.route('/cities')
+def getcities():
+    return city.getcities()
+
+
+
+ 
 
 # Execute on the terminal
 if __name__ =='__main__':
