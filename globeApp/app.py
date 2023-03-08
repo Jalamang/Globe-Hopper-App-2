@@ -22,9 +22,16 @@ def createcountry():
 
 
 # # # Read API
-@app.route('/countries/<int:countryId>', methods=['DELETE'])
+@app.route('/countries/<int:countryid>', methods=['DELETE'])
 def deletecountry(countryid):
     return country.deletecountry(countryid)
+
+
+# # # Read API
+@app.route('/countries', methods=['PUT'])
+def updatecountry():
+    data = request.json
+    return country.updatecountry(data)
 
 
 

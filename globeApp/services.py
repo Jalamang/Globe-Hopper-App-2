@@ -14,7 +14,7 @@ def getcountries():
     mycursor = dbconn.con.cursor()
     
     mycursor.execute("SELECT * FROM Country")
-    result = myCursor.fetchall()
+    result = mycursor.fetchall()
     
     #Close connection
     mycursor.close()
@@ -58,4 +58,28 @@ def deletecountry(countryid):
     #Close connection
     mycursor.close()
     dbconn.con.close()
+    
+    
+    
+def updatecountry(data):
+    #Open connection
+    dbconn.con._open_connection()
+    mycursor = dbconn.con.cursor()
+    
+    countryid = data['CountryId']
+    name = data['Name']
+    population = data['Population']
+    continent = data['Continent']
+    
+    
+    sql = "UPDATE Country SET Name = %s, Population = %s, Continent = %s WHERE CountryId = %s"
+    val = (name, population, continent, countryid)
+    
+    mycursor.execute(sql, val)
+    dbconn.con.commit()
+        
+    #Close connection
+    mycursor.close()
+    dbconn.con.close()
+
     

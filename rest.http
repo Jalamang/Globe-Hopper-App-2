@@ -1,35 +1,28 @@
 
-DELETE HTTP://localhost:5000/countries/7 HTTP/1.1
+
+PATCH HTTP://localhost:5000/countries HTTP/1.1
 Content-Type: application/json
 
+{
+    "Continent": "South America - ",
+    "Name": "USA -South ",
+    "Population": 750000000.00,
+    "CountryId": 2
+}
 
+DELETE HTTP://localhost:5000/countries/7 HTTP/1.1
+Content-Type: application/json
 
 
 GET HTTP://localhost:5000/countries HTTP/1.1
 Content-Type: application/json
 
 
-
-
-
-
-
 POST HTTP://localhost:5000/countries HTTP/1.1
 Content-Type: application/json
 
-{
-    "Continent": "North America - ",
-    "Name": "USA - ",
-    "Population": 550000000.00,
-    "countryId": 7
-  },
 
 
 
 
 
-PATCH HTTP://localhost:5000/countries/countryId HTTP/1.1
-Content-Type: application/json
-
-
-#  count = [ country for country in getcountries() if country['CountryId'] == countryId]
