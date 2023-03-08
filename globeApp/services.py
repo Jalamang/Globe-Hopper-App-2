@@ -51,7 +51,7 @@ def deletecountry(countryid):
     
     sql = "DELETE FROM Country WHERE CountryId = %s"
     cid = countryid
-    mycursor.execute(sql, (id,))
+    mycursor.execute(sql, (cid,))
     
     dbconn.con.commit()
 
