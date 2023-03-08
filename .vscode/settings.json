@@ -1,6 +1,11 @@
 {
     "cSpell.words": [
+        "countryid",
         "dbconn",
-        "jsonify"
+        "jsonify",
+        "myCursor"
+    ],
+    "cSpell.ignoreWords": [
+        "createcountry"
     ]
 }
