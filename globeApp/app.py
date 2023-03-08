@@ -38,16 +38,25 @@ def updatecountry():
 
 # Cities Details
 
-
 # Read API
 @app.route('/cities')
 def getcities():
     return city.getcities()
 
 
+# # Read API
+@app.route('/cities', methods=['POST'])
+def createcity():
+    data = request.json
+    return city.createcity(data)
 
- 
+
+# # # Read API
+@app.route('/cities/<int:cityid>', methods=['DELETE'])
+def deletecity(cityid):
+    return city.deletecity(cityid)
+
 
 # Execute on the terminal
 if __name__ =='__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True)

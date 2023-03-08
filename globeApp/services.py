@@ -94,3 +94,49 @@ def getcities():
     dbconn.con.close()
     
     return result   
+
+
+# Add a City 
+def createcity(data):
+    #Open connection
+    dbconn.con._open_connection()
+    mycursor = dbconn.con.cursor()
+    
+    cityid = data['CityId']
+    name = data['Name']
+    countryid = data['CountryId']
+    capital = data['Capital']
+    firstlandmark = data['FirstLandmark']
+    secondlandmark = data['SecondLandmark']
+    thirdlandmark = data['ThirdLandmark']
+    
+    
+    sql = "INSERT INTO City (CityId, Name, CountryId, Capital, FirstLandmark, SecondLandmark, ThirdLandmark ) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+    val = (cityid, name, countryid, capital, firstlandmark, secondlandmark, thirdlandmark)
+    
+    mycursor.execute(sql, val)
+    dbconn.con.commit()
+    
+    #Close connection
+    mycursor.close()
+    dbconn.con.close()
+    
+    
+    
+    
+#  delete a City
+
+def deletecity(cityid):
+     #Open connection
+    dbconn.con._open_connection()
+    mycursor = dbconn.con.cursor()
+    
+    sql = "DELETE FROM City WHERE CityId = %s"
+    cid = cityid
+    mycursor.execute(sql, (cid,))
+    
+    dbconn.con.commit()
+
+    #Close connection
+    mycursor.close()
+    dbconn.con.close()

@@ -1,26 +1,32 @@
 
+GET HTTP://localhost:5000/cities HTTP/1.1
+
+
+
+
+
+
+
+GET HTTP://localhost:5000/countries HTTP/1.1
+Content-Type: application/json
+
+
+
 
 GET HTTP://localhost:5000/cities HTTP/1.1
 Content-Type: application/json
 
 
-PATCH HTTP://localhost:5000/countries HTTP/1.1
-Content-Type: application/json
 
-{
-    "Continent": "South America - ",
-    "Name": "USA -South ",
-    "Population": 750000000.00,
-    "CountryId": 2
-}
+
+
+
 
 DELETE HTTP://localhost:5000/countries/7 HTTP/1.1
 Content-Type: application/json
 
 
 
-POST HTTP://localhost:5000/countries HTTP/1.1
-Content-Type: application/json
 
 
 

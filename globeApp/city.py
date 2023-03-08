@@ -18,4 +18,13 @@ def getcities():
         })
     return jsonify(data)
 
-# "INSERT INTO City (CityId, Name, CountryId, Capital, FirstLandmark, SecondLandmark, ThirdLandmark
+
+def createcity(data):
+    services.createcity(data)
+    return jsonify({'Message': "City created"})
+
+
+
+def deletecity(cityid):
+    services.deletecity(cityid)
+    return jsonify({'Message': "City deleted"})

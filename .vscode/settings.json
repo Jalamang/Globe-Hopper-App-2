@@ -1,11 +1,17 @@
 {
     "cSpell.words": [
         "cid",
+        "cityid",
         "countryid",
+        "createcity",
         "dbconn",
+        "deletecity",
         "deletecountry",
+        "firstlandmark",
         "jsonify",
         "myCursor",
+        "secondlandmark",
+        "thirdlandmark",
         "updatecountry"
     ],
     "cSpell.ignoreWords": [
