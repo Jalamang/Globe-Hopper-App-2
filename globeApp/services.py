@@ -36,6 +36,23 @@ def getcountry(countryid):
 
 
 
+#  Get a Country by name
+def getcountrybycontinent(continent_name):
+    #Open connection
+    dbconn.con._open_connection()
+    mycursor = dbconn.con.cursor()
+    
+    continentname = continent_name
+    mycursor.execute("SELECT * FROM Country WHERE Continent = %s", (continentname,))
+    
+    result = mycursor.fetchall()
+    
+    #Close connection
+    mycursor.close()
+    dbconn.con.close()
+    
+    return result
+
     
 # Add a country 
 def createcountry(data):

@@ -51,6 +51,10 @@ def updatecountry():
 def getcities():
     return city.getcities()
 
+# Search a country by name
+@app.route('/countries/<string:continent_name>')
+def getcountrybycontinent(continent_name):
+    return country.getcountrybycontinent(continent_name)
 
 
 # # POST API
