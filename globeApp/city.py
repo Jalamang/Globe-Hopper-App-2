@@ -28,3 +28,8 @@ def createcity(data):
 def deletecity(cityid):
     services.deletecity(cityid)
     return jsonify({'Message': "City deleted"})
+
+
+def updatecity(data):
+    services.updatecity(data)
+    return jsonify({'Message': "City updated"})

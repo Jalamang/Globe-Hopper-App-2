@@ -12,6 +12,7 @@
         "myCursor",
         "secondlandmark",
         "thirdlandmark",
+        "updatecity",
         "updatecountry"
     ],
     "cSpell.ignoreWords": [

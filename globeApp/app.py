@@ -14,29 +14,27 @@ def getcountries():
 
 
 
-# # Read API
+# # POST API
 @app.route('/countries', methods=['POST'])
 def createcountry():
     data = request.json
     return country.createcountry(data)
 
 
-# # # Read API
+# # # DELETE API
 @app.route('/countries/<int:countryid>', methods=['DELETE'])
 def deletecountry(countryid):
     return country.deletecountry(countryid)
 
 
-# # # Read API
+# # # PUT API
 @app.route('/countries', methods=['PUT'])
 def updatecountry():
     data = request.json
     return country.updatecountry(data)
 
 
-
-
-# Cities Details
+# ******** Cities Details ************
 
 # Read API
 @app.route('/cities')
@@ -44,17 +42,25 @@ def getcities():
     return city.getcities()
 
 
-# # Read API
+# # POST API
 @app.route('/cities', methods=['POST'])
 def createcity():
     data = request.json
     return city.createcity(data)
 
 
-# # # Read API
+# # # DELETE API
 @app.route('/cities/<int:cityid>', methods=['DELETE'])
 def deletecity(cityid):
     return city.deletecity(cityid)
+
+
+# # # PUT API
+@app.route('/cities', methods=['PUT'])
+def updatecity():
+    data = request.json
+    return city.updatecity(data)
+
 
 
 # Execute on the terminal

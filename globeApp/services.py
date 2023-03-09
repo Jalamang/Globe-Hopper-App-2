@@ -140,3 +140,28 @@ def deletecity(cityid):
     #Close connection
     mycursor.close()
     dbconn.con.close()
+    
+    
+def updatecity(data):
+    #Open connection
+    dbconn.con._open_connection()
+    mycursor = dbconn.con.cursor()
+    
+    cityid = data['CityId']
+    name = data['Name']
+    countryid = data['CountryId']
+    capital = data['Capital']
+    firstlandmark = data['FirstLandmark']
+    secondlandmark = data['SecondLandmark']
+    thirdlandmark = data['ThirdLandmark']
+    
+    
+    sql = "UPDATE City SET Name = %s, CountryId = %s, Capital = %s, FirstLandmark = %s, SecondLandmark = %s, ThirdLandmark = %s WHERE CityId = %s"
+    val = (name, countryid, capital, firstlandmark, secondlandmark, thirdlandmark, cityid)
+    
+    mycursor.execute(sql, val)
+    dbconn.con.commit()
+        
+    #Close connection
+    mycursor.close()
+    dbconn.con.close()
