@@ -14,6 +14,14 @@ def getcountries():
 
 
 
+# Read | Get a country by id
+@app.route('/countries/<int:countryid>')
+def getcountry(countryid):
+    return country.getcountry(countryid)
+
+
+
+
 # # POST API
 @app.route('/countries', methods=['POST'])
 def createcountry():
@@ -40,6 +48,7 @@ def updatecountry():
 @app.route('/cities')
 def getcities():
     return city.getcities()
+
 
 
 # # POST API

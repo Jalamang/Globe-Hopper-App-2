@@ -15,6 +15,19 @@ def getcountries():
     return jsonify(data)
 
 
+def getcountry(countryid):
+    
+    data = []
+    for row in services.getcountry(countryid):
+        data.append({
+            "countryId": row[0],
+            "Name": row[1],
+            "Population": row[2],
+            "Continent": row[3]
+        })
+    return  jsonify({'Message': "Country with ...is fetched"},{"Payload": data})
+
+
 
 def createcountry(data):
     services.createcountry(data)

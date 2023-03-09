@@ -17,6 +17,25 @@ def getcountries():
     dbconn.con.close()
     
     return result
+
+
+#  Get a Country
+def getcountry(countryid):
+    #Open connection
+    dbconn.con._open_connection()
+    mycursor = dbconn.con.cursor()
+    country_id = countryid
+    mycursor.execute("SELECT * FROM City WHERE CountryId = %s", (country_id,))
+    result = mycursor.fetchall()
+    
+    #Close connection
+    mycursor.close()
+    dbconn.con.close()
+    
+    return result
+
+
+
     
 # Add a country 
 def createcountry(data):

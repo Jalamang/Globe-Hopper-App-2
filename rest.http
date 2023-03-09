@@ -1,32 +1,14 @@
-
-GET HTTP://localhost:5000/cities HTTP/1.1
-Content-Type: application/json
-
-{
-    "Capital": 1,
-    "CityId": 1,
-    "CountryId": 2,
-    "FirstLandmark": "Parliament House PH",
-    "Name": "Ottawa -O",
-    "SecondLandmark": "Museum M",
-    "ThirdLandmark": "Rideau Canal - RC"
-  }
-
-
-
-
 GET HTTP://localhost:5000/countries HTTP/1.1
 Content-Type: application/json
 
 
 
+GET HTTP://localhost:5000/cities/2 HTTP/1.1
+
+
 
 GET HTTP://localhost:5000/cities HTTP/1.1
 Content-Type: application/json
-
-
-
-
 
 
 
